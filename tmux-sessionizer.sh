@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 roots=(
-    ~/.local/
     ~/.config/
     ~/Workspaces/
     ~/Workspaces/github.com/benskia/

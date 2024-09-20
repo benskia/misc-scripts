@@ -14,6 +14,20 @@ do
     esac
 done
 
+if [[ "$1" == "-h" ]]; then
+    echo ""
+    echo "Usage: ./toggle-charge.sh <option> [arg]"
+    echo ""
+    echo "-h            Print this help information"
+    echo "-m            Mode"
+    echo "      ls      List charge information"
+    echo "      health  Print battery's percent of full energy spec"
+    echo "      mid     Set mid charge (for prolonged plug-in)"
+    echo "      max     Set max charge (for portable use)"
+    echo ""
+    exit 0
+fi
+
 if [[ $mode == "ls" ]]; then
     chargeStart=`cat /sys/class/power_supply/BAT0/charge_control_start_threshold`
     chargeEnd=`cat /sys/class/power_supply/BAT0/charge_control_end_threshold`
@@ -57,4 +71,5 @@ elif [[ $mode == "max" ]]; then
 fi
 
 echo "Invalid or missing arg"
+echo "Usage: toggle-charge.sh -m <mode>"
 exit 1
