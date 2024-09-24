@@ -2,7 +2,6 @@
 
 roots=(
     ~/.config/
-    ~/Workspaces/
     ~/Workspaces/github.com/benskia/
     ~/Documents/
 )
